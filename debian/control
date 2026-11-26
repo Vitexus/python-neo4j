@@ -1,0 +1,28 @@
+Source: python-neo4j
+Section: python
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-setuptools,
+ python3-tomlkit,
+Standards-Version: 4.7.0
+Homepage: https://neo4j.com/
+Vcs-Git: https://github.com/Vitexus/python-neo4j.git
+Vcs-Browser: https://github.com/Vitexus/python-neo4j
+Rules-Requires-Root: no
+
+Package: python3-neo4j
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ python3-tz,
+Description: Neo4j Bolt driver for Python
+ The official Python driver for Neo4j provides synchronous and asynchronous
+ Bolt connections, routing, result streaming and graph temporal types.
+ .
+ This package provides the Python 3 library.

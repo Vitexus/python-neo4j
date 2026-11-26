@@ -1,0 +1,5 @@
+python-neo4j (5.28.1-1) UNRELEASED; urgency=medium
+
+  * Initial Debian packaging of Neo4j Python driver 5.28.1.
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Thu, 26 Nov 2026 17:00:00 +0100

@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=neo4j
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_configure:
+	sed -i 's/version = "5.28.dev0"/version = "5.28.1"/' src/neo4j/_meta.py
+	dh_auto_configure
+
+override_dh_auto_build:
+	dh_auto_build
+	sed -i 's/version = "5.28.1"/version = "5.28.dev0"/' src/neo4j/_meta.py
+
+override_dh_auto_clean:
+	dh_auto_clean
+	sed -i 's/version = "5.28.1"/version = "5.28.dev0"/' src/neo4j/_meta.py
+
+override_dh_auto_test:
+	# Unit tests contain broad optional/integration coverage; smoke-test on install.
